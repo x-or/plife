@@ -195,124 +195,6 @@ begin
     fCells[p, g, y, x]:=True;
 end;
 
-{.$DEFINE XOR_MODE}
-{$IFDEF XOR_MODE}
-procedure FastSetCell(IsPersistentBirth: Boolean; p: PPopulation; g, y, x: Integer); inline;
-var
-  i: Integer;
-begin
-  if IsPersistentBirth then begin
-    assert(g<=12);
-    case g of
-      1: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-      end;
-      2: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-      end;
-      3: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-      end;
-      4: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-      end;
-      5: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-      end;
-      6: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-      end;
-      7: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-      end;
-      8: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-        p[8, y, x]:=p[8, y, x] xor True;
-      end;
-      9: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-        p[8, y, x]:=p[8, y, x] xor True;
-        p[9, y, x]:=p[9, y, x] xor True;
-      end;
-      10: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-        p[8, y, x]:=p[8, y, x] xor True;
-        p[9, y, x]:=p[9, y, x] xor True;
-        p[10, y, x]:=p[10, y, x] xor True;
-      end;
-      11: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-        p[8, y, x]:=p[8, y, x] xor True;
-        p[9, y, x]:=p[9, y, x] xor True;
-        p[10, y, x]:=p[10, y, x] xor True;
-        p[11, y, x]:=p[11, y, x] xor True;
-      end;
-      12: begin
-        p[1, y, x]:=p[1, y, x] xor True;
-        p[2, y, x]:=p[2, y, x] xor True;
-        p[3, y, x]:=p[3, y, x] xor True;
-        p[4, y, x]:=p[4, y, x] xor True;
-        p[5, y, x]:=p[5, y, x] xor True;
-        p[6, y, x]:=p[6, y, x] xor True;
-        p[7, y, x]:=p[7, y, x] xor True;
-        p[8, y, x]:=p[8, y, x] xor True;
-        p[9, y, x]:=p[9, y, x] xor True;
-        p[10, y, x]:=p[10, y, x] xor True;
-        p[11, y, x]:=p[11, y, x] xor True;
-        p[12, y, x]:=p[12, y, x] xor True;
-      end;
-    end;
-    {for i := g downto 1 do
-      p[i, y, x]:=True}
-  end else
-    p[g, y, x]:=True;
-end;
-{$ELSE}
 procedure FastSetCell(IsPersistentBirth: Boolean; p: PPopulation; g, y, x: Integer); inline;
 var
   i: Integer;
@@ -429,7 +311,6 @@ begin
   end else
     p[g, y, x]:=True;
 end;
-{$ENDIF}
 
 function TPersistentLifeForm.GetCell(g, y, x: Integer): Boolean;
 begin
