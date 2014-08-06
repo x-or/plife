@@ -1,0 +1,6 @@
+__history/
+*.exe
+*.dcu
+*.dfm.cbk
+*.identcache
+*.dproj.local
