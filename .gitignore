@@ -1,6 +1,6 @@
 __history/
 *.exe
 *.dcu
-*.dfm.cbk
+*.cbk
 *.identcache
 *.dproj.local
