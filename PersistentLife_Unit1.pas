@@ -168,10 +168,10 @@ begin
             Line[x].A:=0;
           end else begin
             sum:=0;
-            for gen := 2 to fGenerations do begin
+            for gen := 1 to fGenerations-1 do begin
               cell:=fCells[fCurrentPopulation, gen, y, x];
               if cell then begin
-                sum:=sum+(gen-1); // Weighted sum of the live positions
+                sum:=sum+gen; // Weighted sum of the live positions
               end;
             end;
             Line[x]:=fIntensityToRGB[255*sum div max_sum];
