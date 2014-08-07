@@ -15,7 +15,7 @@ type
   PGeneration = ^TGeneration;
   TGeneration = array[0..StateSize, 0..StateSize] of Boolean;
   PPopulation = ^TPopulation;
-  TPopulation = array[1..MaxGenerations] of TGeneration;
+  TPopulation = array[1..MaxGenerations] of TGeneration; // 1 is the last generation
   PLifeRule = ^TLifeRule;
   TLifeRule = array[0..8] of Boolean;
 
@@ -402,7 +402,7 @@ begin
           // "live cell"
           if (not survive_rule[live_sum]) then begin
             p_new_gen[y, x]:=False;
-            if g>1 then
+            if g>1 then // revive cell in the next generation(s)
               FastSetCell(fPersistentBirth, p_new_pop, g-1, y, x);
           end;
         end;
